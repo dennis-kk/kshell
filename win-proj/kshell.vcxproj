@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CD4D0448-BBB3-491A-8736-BA78350D110C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>kshell</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <EmbedManifest>false</EmbedManifest>
+    <OutDir>$(SolutionDir)$\..\..\bin\debug\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\kshell\interface;..\kshell\internal;..\kshell\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996;4127;4244;4702;4100;4706</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\kshell\internal\bundle_box.cpp" />
+    <ClCompile Include="..\kshell\internal\bundle_box_loader.cpp" />
+    <ClCompile Include="..\kshell\internal\bundle_context_impl.cpp" />
+    <ClCompile Include="..\kshell\internal\bundle_impl.cpp" />
+    <ClCompile Include="..\kshell\internal\bundle_loader.cpp" />
+    <ClCompile Include="..\kshell\internal\bundle_manager.cpp" />
+    <ClCompile Include="..\kshell\internal\bundle_reference_impl.cpp" />
+    <ClCompile Include="..\kshell\internal\condition.cpp" />
+    <ClCompile Include="..\kshell\internal\daemon_win32.cpp" />
+    <ClCompile Include="..\kshell\internal\framework_factory.cpp" />
+    <ClCompile Include="..\kshell\internal\framework_impl.cpp" />
+    <ClCompile Include="..\kshell\internal\misc.cpp" />
+    <ClCompile Include="..\kshell\internal\path.cpp" />
+    <ClCompile Include="..\kshell\internal\pid_file.cpp" />
+    <ClCompile Include="..\kshell\internal\resolver.cpp" />
+    <ClCompile Include="..\kshell\internal\scope_lock.cpp" />
+    <ClCompile Include="..\kshell\internal\service_reference_impl.cpp" />
+    <ClCompile Include="..\kshell\internal\util.cpp" />
+    <ClCompile Include="..\kshell\lua\lapi.c" />
+    <ClCompile Include="..\kshell\lua\lauxlib.c" />
+    <ClCompile Include="..\kshell\lua\lbaselib.c" />
+    <ClCompile Include="..\kshell\lua\lbitlib.c" />
+    <ClCompile Include="..\kshell\lua\lcode.c" />
+    <ClCompile Include="..\kshell\lua\lcorolib.c" />
+    <ClCompile Include="..\kshell\lua\lctype.c" />
+    <ClCompile Include="..\kshell\lua\ldblib.c" />
+    <ClCompile Include="..\kshell\lua\ldebug.c" />
+    <ClCompile Include="..\kshell\lua\ldo.c" />
+    <ClCompile Include="..\kshell\lua\ldump.c" />
+    <ClCompile Include="..\kshell\lua\lfunc.c" />
+    <ClCompile Include="..\kshell\lua\lgc.c" />
+    <ClCompile Include="..\kshell\lua\linit.c" />
+    <ClCompile Include="..\kshell\lua\liolib.c" />
+    <ClCompile Include="..\kshell\lua\llex.c" />
+    <ClCompile Include="..\kshell\lua\lmathlib.c" />
+    <ClCompile Include="..\kshell\lua\lmem.c" />
+    <ClCompile Include="..\kshell\lua\loadlib.c" />
+    <ClCompile Include="..\kshell\lua\lobject.c" />
+    <ClCompile Include="..\kshell\lua\lopcodes.c" />
+    <ClCompile Include="..\kshell\lua\loslib.c" />
+    <ClCompile Include="..\kshell\lua\lparser.c" />
+    <ClCompile Include="..\kshell\lua\lstate.c" />
+    <ClCompile Include="..\kshell\lua\lstring.c" />
+    <ClCompile Include="..\kshell\lua\lstrlib.c" />
+    <ClCompile Include="..\kshell\lua\ltable.c" />
+    <ClCompile Include="..\kshell\lua\ltablib.c" />
+    <ClCompile Include="..\kshell\lua\ltm.c" />
+    <ClCompile Include="..\kshell\lua\lundump.c" />
+    <ClCompile Include="..\kshell\lua\lvm.c" />
+    <ClCompile Include="..\kshell\lua\lzio.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\kshell\interface\auto_bundle.h" />
+    <ClInclude Include="..\kshell\interface\auto_service.h" />
+    <ClInclude Include="..\kshell\interface\bundle.h" />
+    <ClInclude Include="..\kshell\interface\bundle_activator.h" />
+    <ClInclude Include="..\kshell\interface\bundle_context.h" />
+    <ClInclude Include="..\kshell\interface\bundle_event.h" />
+    <ClInclude Include="..\kshell\interface\bundle_exception.h" />
+    <ClInclude Include="..\kshell\interface\bundle_listener.h" />
+    <ClInclude Include="..\kshell\interface\bundle_reference.h" />
+    <ClInclude Include="..\kshell\interface\class_not_found_exception.h" />
+    <ClInclude Include="..\kshell\interface\framework.h" />
+    <ClInclude Include="..\kshell\interface\framework_event.h" />
+    <ClInclude Include="..\kshell\interface\framework_exception.h" />
+    <ClInclude Include="..\kshell\interface\interrupted_exception.h" />
+    <ClInclude Include="..\kshell\interface\kshell.h" />
+    <ClInclude Include="..\kshell\interface\pragma.h" />
+    <ClInclude Include="..\kshell\interface\service.h" />
+    <ClInclude Include="..\kshell\interface\service_event.h" />
+    <ClInclude Include="..\kshell\interface\service_exception.h" />
+    <ClInclude Include="..\kshell\interface\service_listener.h" />
+    <ClInclude Include="..\kshell\interface\service_reference.h" />
+    <ClInclude Include="..\kshell\interface\service_wrapper.h" />
+    <ClInclude Include="..\kshell\internal\bundle_box.h" />
+    <ClInclude Include="..\kshell\internal\bundle_box_loader.h" />
+    <ClInclude Include="..\kshell\internal\bundle_config.h" />
+    <ClInclude Include="..\kshell\internal\bundle_context_impl.h" />
+    <ClInclude Include="..\kshell\internal\bundle_guid.h" />
+    <ClInclude Include="..\kshell\internal\bundle_handle.h" />
+    <ClInclude Include="..\kshell\internal\bundle_impl.h" />
+    <ClInclude Include="..\kshell\internal\bundle_loader.h" />
+    <ClInclude Include="..\kshell\internal\bundle_manager.h" />
+    <ClInclude Include="..\kshell\internal\bundle_reference_impl.h" />
+    <ClInclude Include="..\kshell\internal\color.h" />
+    <ClInclude Include="..\kshell\internal\condition.h" />
+    <ClInclude Include="..\kshell\internal\framework_factory.h" />
+    <ClInclude Include="..\kshell\internal\framework_impl.h" />
+    <ClInclude Include="..\kshell\internal\ignore.h" />
+    <ClInclude Include="..\kshell\internal\misc.h" />
+    <ClInclude Include="..\kshell\internal\path.h" />
+    <ClInclude Include="..\kshell\internal\pid_file.h" />
+    <ClInclude Include="..\kshell\internal\resolver.h" />
+    <ClInclude Include="..\kshell\internal\scope_lock.h" />
+    <ClInclude Include="..\kshell\internal\service_reference_impl.h" />
+    <ClInclude Include="..\kshell\internal\util.h" />
+    <ClInclude Include="..\kshell\internal\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\kshell\interface\service_wrapper_impl.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
