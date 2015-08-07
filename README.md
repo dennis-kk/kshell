@@ -1,2 +1,3 @@
 # kshell
-C++ component manager/loader framework
+C++ component framework.   
+See bundle-sample.
