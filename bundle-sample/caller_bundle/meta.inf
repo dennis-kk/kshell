@@ -1,0 +1,7 @@
+bundle="caller_bundle"
+version="0.1"
+symbolicName="caller"
+activator="newActivator"
+newService="newService"
+destroyService="destroyService"
+require="mybundle"

@@ -17,15 +17,6 @@
 
 Path::Path(const std::string& path) {
     _path = path;
-#ifdef WIN32
-    if (path.at(path.size() - 1) != '\\') {
-        _path += '\\';
-    }
-#else
-    if (path.at(path.size() - 1) != '/') {
-        _path += '/';
-    }
-#endif // WIN32
 }
 
 Path::~Path() {
@@ -43,28 +34,37 @@ bool Path::childPath(std::vector<std::string>& children) {
     if (!isExist()) {
         return false;
     }
-#ifdef WIN32
+#   ifdef WIN32
     WIN32_FIND_DATAA findData;
     HANDLE           handle = INVALID_HANDLE_VALUE;
-    handle = FindFirstFileA(_path.c_str(), &findData);
+    std::string      path   = _path + "\\*.*";
+    handle = FindFirstFile(path.c_str(), &findData);
     if (handle == INVALID_HANDLE_VALUE) {
         return false;
     }
-    while (FindNextFileA(handle, &findData)) {
+    _path += '\\';
+    for (;;) {
         if (strcmp(findData.cFileName, ".") == 0 ||
             strcmp(findData.cFileName, "..") == 0 ){
+            if (!FindNextFile(handle, &findData)) {
+                break;
+            }
             continue;
         }
         std::string path = _path + findData.cFileName;
         children.push_back(path);
+        if (!FindNextFile(handle, &findData)) {
+            break;
+        }
     }
-#else
+#   else
     DIR           *dir = 0;  
     struct dirent *ent = 0;
     dir = opendir(_path.c_str());
     if (!dir) {
         return false;
     }
+    _path += '/';
     while (0 != (ent = readdir(dir))) {
         if (ent->d_type & DT_DIR) {
             if (strcmp(ent->d_name,".") == 0 ||
@@ -75,6 +75,6 @@ bool Path::childPath(std::vector<std::string>& children) {
             children.push_back(path);
         }
     }
-#endif // WIN32
+#   endif // WIN32
     return true;
 }

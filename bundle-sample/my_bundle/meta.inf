@@ -1,0 +1,7 @@
+bundle="my_bundle"
+version="0.1"
+symbolicName="mybundle"
+activator="newActivator"
+newService="newService"
+destroyService="destroyService"
+require=""

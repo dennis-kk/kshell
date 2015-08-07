@@ -12,7 +12,7 @@ std::string getExePath() {
     const static int SIZE = 512;
     char path[SIZE] = {0};
 #ifdef WIN32    
-    ::GetModuleFileNameA(NULL, path, sizeof(path));
+    ::GetModuleFileName(NULL, path, sizeof(path));
 #else
     int result = readlink("/proc/self/exe", path, sizeof(path));
     if (result < 0 || (result >= SIZE - 1)) {
