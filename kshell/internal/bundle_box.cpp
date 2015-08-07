@@ -46,13 +46,6 @@ void BundleBox::start(const std::string& root) throw(BundleException) {
 #   endif // WIN32
 
     bundlePath += "bundle";
-
-//#   ifdef WIN32
-//    bundlePath += "\\";
-//#   else
-//    bundlePath += "/";
-//#   endif // WIN32
-
     std::cout << "Check bundle dependency";
 
     _boxLoader.load(bundlePath, _resolver);
