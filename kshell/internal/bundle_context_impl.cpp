@@ -120,11 +120,11 @@ ServiceReference* BundleContextImpl::newClass(const std::string& name) throw(Cla
         return dynamic_cast<ServiceReference*>(&_invalidServiceReference);
     }
     // fire Service::STARTING event
-    //fireServiceEvent(ServiceEvent(Service::STARTING, name));
+    fireServiceEvent(ServiceEvent(Service::STARTING, name));
     service->initialize();
 
     // fire Service::ACTIVE event
-    //fireServiceEvent(ServiceEvent(Service::ACTIVE, name));
+    fireServiceEvent(ServiceEvent(Service::ACTIVE, name));
 
     return dynamic_cast<ServiceReference*>(new ServiceReferenceImpl(this, service, name));
 }
@@ -135,12 +135,12 @@ void BundleContextImpl::destroyClass(ServiceReferenceImpl* serviceReference, std
         return;
     }
     // fire Service::STOPPING event
-    //fireServiceEvent(ServiceEvent(Service::STOPPING, name));
+    fireServiceEvent(ServiceEvent(Service::STOPPING, name));
     serviceReference->getNoop()->finalize();
 
     _loader.destroyClass(_destroyServiceSymbol, serviceReference->getNoop(), name);
     // fire Service::STOPPED event
-    //fireServiceEvent(ServiceEvent(Service::STOPPED, name));
+    fireServiceEvent(ServiceEvent(Service::STOPPED, name));
 
     delete serviceReference;
 }
@@ -202,8 +202,8 @@ BundleReference* BundleContextImpl::installBundle(const std::string& location) t
     }
 
     // fire Bundle::INSTALLED event
-    //fireBundleEvent(
-    //    BundleEvent(Bundle::INSTALLED, BundleManager::getInstance()->get(_id)));
+    fireBundleEvent(
+        BundleEvent(Bundle::INSTALLED, BundleManager::getInstance()->get(_id)));
 
     return BundleManager::getInstance()->get(_id);
 }
