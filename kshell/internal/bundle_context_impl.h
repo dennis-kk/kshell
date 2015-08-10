@@ -93,13 +93,6 @@ private:
 
     std::list<BundleListener*> _bundleListeners;
     std::list<ServiceListener*> _serviceListeners;
-
-    std::list<BundleEvent> _unfiredBundleEvent;
-    std::list<ServiceEvent> _unfiredServiceEvent;
-
-private:
-    static const int MAX_UNFIRED_BUNDLE_EVENT = 1024;
-    static const int MAX_UNFIRED_SERVICE_EVENT = 1024;
 };
 
 #endif // BUNDLE_CONTEXT_IMPL_H

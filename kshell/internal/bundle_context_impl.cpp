@@ -280,24 +280,8 @@ BundleLoader* BundleContextImpl::getLoader() {
 void BundleContextImpl::fireBundleEvent(BundleEvent bundleEvent) {
     ScopeLock<RecursiveLock> guard(&_lock);
     if (_bundleListeners.empty()) {
-        if (MAX_UNFIRED_BUNDLE_EVENT > (int)_unfiredBundleEvent.size()) {
-            _unfiredBundleEvent.push_back(bundleEvent);
-        } else {
-            // avoid memory leak
-            _unfiredBundleEvent.clear();
-        }
         return;
     }
-
-    std::list<BundleEvent>::iterator eventIterator = _unfiredBundleEvent.begin();
-    for (; eventIterator != _unfiredBundleEvent.end(); eventIterator++) {
-        std::list<BundleListener*>::iterator iterator = _bundleListeners.begin();
-        for (; iterator != _bundleListeners.end(); iterator++) {
-            (*iterator)->bundleChanged(*eventIterator);
-        }
-    }
-
-    _unfiredBundleEvent.clear();
 
     std::list<BundleListener*>::iterator iterator = _bundleListeners.begin();
     for (; iterator != _bundleListeners.end(); iterator++) {
@@ -308,24 +292,8 @@ void BundleContextImpl::fireBundleEvent(BundleEvent bundleEvent) {
 void BundleContextImpl::fireServiceEvent(ServiceEvent serviceEvent) {
     ScopeLock<RecursiveLock> guard(&_lock);
     if (_serviceListeners.empty()) {
-        if (MAX_UNFIRED_SERVICE_EVENT > (int)_unfiredServiceEvent.size()) {
-            _unfiredServiceEvent.push_back(serviceEvent);
-        } else {
-            // avoid memory leak
-            _unfiredServiceEvent.clear();
-        }
         return;
     }
-
-    std::list<ServiceEvent>::iterator eventIterator = _unfiredServiceEvent.begin();
-    for (; eventIterator != _unfiredServiceEvent.end(); eventIterator++) {
-        std::list<ServiceListener*>::iterator iterator = _serviceListeners.begin();
-        for (; iterator != _serviceListeners.end(); iterator++) {
-            (*iterator)->serviceChanged(*eventIterator);
-        }
-    }
-
-    _unfiredServiceEvent.clear();
 
     std::list<ServiceListener*>::iterator iterator = _serviceListeners.begin();
     for (; iterator != _serviceListeners.end(); iterator++) {
