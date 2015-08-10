@@ -11,6 +11,11 @@
 #include "misc.h"
 #include "ignore.h"
 
+#ifndef WIN32
+#   include <unistd.h>
+#   include <time.h>
+#endif // WIN32
+
 BundleBox::BundleBox() {
     _quit = true;
     _maxMargin = 0;
@@ -139,13 +144,19 @@ void BundleBox::stop() throw(BundleException) {
     }
     _contexts.clear();
     _quit = true;
-    _signal.signal();
 }
 
 bool BundleBox::waitForStop() {
-    ScopeLock<RecursiveLock> guard(&_lock);
-    if (!_quit) {
-        _signal.wait();
+    // waiting for quit
+    while (!_quit) {
+#   ifdef WIN32
+    Sleep(100);
+#   else
+    struct timespec req;
+    req.tv_sec = 0;
+    req.tv_nsec = 1000000;
+    nanosleep(&req, 0);
+#   endif // WIN32
     }
     return _quit;
 }

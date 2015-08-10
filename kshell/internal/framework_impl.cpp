@@ -35,11 +35,7 @@ void FrameworkImpl::start() throw(FrameworkException) {
     } while (0);
 
     _location = getExePath();
-
-    do {
-        ScopeLock<RecursiveLock> guard(&_flagLock);
-        _flag = true;
-    } while (0);
+    _flag     = true;
 
     bool result = false;
     while (!result) {
@@ -52,7 +48,6 @@ void FrameworkImpl::start() throw(FrameworkException) {
 
     do {
         // cleanup
-        ScopeLock<RecursiveLock> guard(&_flagLock);
         if (NULL != _box) {
             delete _box;
         }
@@ -61,14 +56,9 @@ void FrameworkImpl::start() throw(FrameworkException) {
 }
 
 void FrameworkImpl::stop() throw(FrameworkException) {
-    do {
-        ScopeLock<RecursiveLock> guard(&_flagLock);
-        if (!_flag) {
-            throw FrameworkException("Framework starting phase was not finished");
-        }
-    } while (0);
-
-    ScopeLock<RecursiveLock> guard(&_flagLock);
+    if (!_flag) {
+        throw FrameworkException("Framework starting phase was not finished");
+    }
     if (NULL != _box) {
         try {
             _box->stop();

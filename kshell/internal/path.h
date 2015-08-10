@@ -10,7 +10,7 @@ public:
     ~Path();
     bool isExist();
     bool childPath(std::vector<std::string>& children);
-
+    bool remove();
 private:
     std::string _path;
 };

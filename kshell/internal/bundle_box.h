@@ -61,8 +61,7 @@ private:
     Ignore _ignore;
     BundleBoxLoader _boxLoader;
     RecursiveLock _lock;
-    Condition _signal;
-    bool _quit;
+    volatile bool _quit;
     size_t _maxMargin;
 };
 

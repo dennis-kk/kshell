@@ -18,12 +18,12 @@ Condition::~Condition() {
 }
 
 void Condition::wait() {
+#   ifdef WIN32
     ScopeLock<RecursiveLock> guard(&_lock);
     if (_signal) {
         return;
     }
     _wait += 1;
-#   ifdef WIN32
     WaitForSingleObject(_event, INFINITE);
     _wait -= 1;
     if (!_wait) {
@@ -31,6 +31,7 @@ void Condition::wait() {
         _signal = false;
     }
 #   else
+    ScopeLock<RecursiveLock> guard(&_lock);
     pthread_cond_wait(&_cond, _lock.getMutex());
 #   endif // WIN32
 }

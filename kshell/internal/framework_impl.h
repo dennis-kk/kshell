@@ -16,9 +16,8 @@ public:
 private:
     BundleBox* _box;
     RecursiveLock _lock;
-    RecursiveLock _flagLock;
-    std::string _location;
-    bool _flag;
+    std::string   _location;
+    volatile bool _flag;
 };
 
 #endif // FRAMEWORK_IMPL_H

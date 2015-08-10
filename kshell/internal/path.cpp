@@ -78,3 +78,12 @@ bool Path::childPath(std::vector<std::string>& children) {
 #   endif // WIN32
     return true;
 }
+
+bool Path::remove() {
+#   ifdef WIN32
+    DeleteFile(_path.c_str());
+#   else
+    unlink(_path.c_str());
+#endif // WIN32
+    return true;
+}
