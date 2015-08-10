@@ -29,17 +29,37 @@
 
 #include "service_exception.h"
 
+/**
+ * @defgroup service 服务
+ * 服务
+ *
+ * <pre>
+ * 可以被其他bundle使用的服务必须实现这个接口.
+ * </pre>
+ * @{
+ */
+
 class Service {
 public:
-    static const int STARTING = 1;
-    static const int ACTIVE = 2;
-    static const int STOPPING = 4;
-    static const int STOPPED = 8;
+    static const int STARTING = 1; ///< 启动中
+    static const int ACTIVE   = 2; ///< 已激活并可以使用
+    static const int STOPPING = 4; ///< 停止中
+    static const int STOPPED  = 8; ///< 已停止
 
 public:
     virtual ~Service() {}
+
+    /**
+     * 自定义初始化
+     */
     virtual void initialize() throw(ServiceException) = 0;
+
+    /**
+     * 自定义清理函数
+     */
 	virtual void finalize() throw(ServiceException) = 0;
 };
+
+/** @} */
 
 #endif // SERVICE_H

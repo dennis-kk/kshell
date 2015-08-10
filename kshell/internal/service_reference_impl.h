@@ -51,11 +51,11 @@ public:
     void setNoop(Service* service);
 
 private:
-    RecursiveLock _lock;
-    Service* _service;
+    RecursiveLock      _lock;
+    Service*           _service;
     BundleContextImpl* _context;
-    int _reference;
-    std::string _name;
+    int                _reference;
+    std::string        _name;
 };
 
 #endif // SERVICE_REFERENCE_IMPL_H

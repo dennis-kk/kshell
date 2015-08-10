@@ -31,6 +31,31 @@
 #include "service_exception.h"
 #include "service.h"
 
+/**
+ * @defgroup service_wrapper 服务包装模板
+ * 服务包装模板
+ *
+ * <pre>
+ * 可以将任何一个类包装为kshell可以建立的服务，原有的类需要实现连个方法：
+ *
+ * 1. void serviceStart()
+ * 2. void serviceStop()
+ *
+ * 模板类提供了多个构造函数参数版本，最多支持8个参数.
+ *
+ * 使用方式如下：
+ *
+ * ServiceWrapper<MyServiceImpl>* wrapper = new ServiceWrapper<MyServiceImpl>();
+ *
+ * 建立一个包装类的实例，可以通过:
+ *
+ * wrapper->service()方法得到Service指针，可以通过类静态方法ServiceWrapper<MyServiceImpl>::cast<T>(service)
+ * 将service转换为具有继承关系的有效的指针类型.
+ *
+ * </pre>
+ * @{
+ */
+
 template <typename T>
 class ServiceWrapper : public Service, public T {
 public:
@@ -102,5 +127,7 @@ public:
     virtual ~ServiceWrapperParam8() {}
     #include "service_wrapper_impl.inl"
 };
+
+/** @} */
 
 #endif // SERVICE_WRAPPER_H

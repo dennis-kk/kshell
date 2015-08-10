@@ -29,13 +29,44 @@
 
 class Service;
 
+/**
+ * @defgroup service_reference 服务引用
+ * 服务引用
+ *
+ * <pre>
+ * Service指针引用包装，提供对Service指针的应用计数及生命周期管理
+ * </pre>
+ * @{
+ */
+
 class ServiceReference {
 public:
     virtual ~ServiceReference() {}
+
+    /**
+     * 获取Service指针并增加引用计数
+     * @return Service指针
+     */
     virtual Service* get() = 0;
+
+    /**
+     * 减少引用计数
+     */
     virtual void unget() = 0;
+
+    /**
+     * 如果引用计数为零则销毁
+     */
     virtual void destroy() = 0;
+
+    /**
+     * 引用的Service是否有效
+     * @retval true 有效
+     * @retval false 无效
+     */
     virtual bool isOk() = 0;
 };
+
+/** @} */
 
 #endif // SERVICE_REFERENCE_H

@@ -29,8 +29,16 @@
 
 #include "framework_exception.h"
 
-class Controller;
-class Monitor;
+
+/**
+ * @defgroup framework 框架
+ * 框架
+ *
+ * <pre>
+ * kshell框架.
+ * </pre>
+ * @{
+ */
 
 /**
  * @brief osgi framework
@@ -38,20 +46,24 @@ class Monitor;
 class Framework {
 public:
     virtual ~Framework() {}
+
     /**
-     * @brief start framework
+     * @brief 启动框架
      */
     virtual void start() throw(FrameworkException) = 0;
 
     /**
-     * @brief stop framework
+     * @brief 关闭框架
      */
     virtual void stop() throw(FrameworkException) = 0;
 
     /**
-     * @brief get framework binary directory
+     * @brief 获取可执行文件所在绝对路径
+     * @return 可执行文件所在绝对路径
      */
     virtual const std::string& getLocation() = 0;
 };
+
+/** @} */
 
 #endif // FRAMEWORK_H
