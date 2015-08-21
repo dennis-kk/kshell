@@ -65,3 +65,30 @@ add_executable(kshell
 )
 
 target_link_libraries(kshell -lpthread -ldl)
+
+INSTALL(FILES
+	interface/auto_bundle.h
+	interface/auto_service.h
+	interface/bundle.h
+	interface/bundle_activator.h
+	interface/bundle_context.h
+	interface/bundle_event.h
+	interface/bundle_exception.h
+	interface/bundle_guid.h
+	interface/bundle_listener.h
+	interface/bundle_reference.h
+	interface/class_not_found_exception.h
+	interface/framework.h
+	interface/framework_event.h
+	interface/framework_exception.h
+	interface/interrupted_exception.h
+	interface/kshell.h
+	interface/pragma.h
+	interface/service.h
+	interface/service_event.h
+	interface/service_exception.h
+	interface/service_listener.h
+	interface/service_reference.h
+	interface/service_wrapper.h
+	interface/service_wrapper_impl.inl
+DESTINATION include/kshell)

@@ -1,5 +1,5 @@
 cmake CMakeLists.txt
-make
+make install
 if [ ! -d ./bin/bundle ]; then
     mkdir bin/bundle
 	mkdir bin/bundle/my_bundle
