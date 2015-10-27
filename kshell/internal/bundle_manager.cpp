@@ -79,14 +79,14 @@ void BundleManager::remove(BundleGuid id) {
         return;
     }
     if (0 == iterator->second->getCount()) {
-        delete iterator->second->getNoop();
-        delete iterator->second;
-        _bundles.erase(iterator);
         std::map<std::string, BundleGuid>::iterator iteratorName =
             _bundleNames.find(iterator->second->getNoop()->getSymbolicName());
         if (iteratorName != _bundleNames.end()) {
             _bundleNames.erase(iteratorName);
         }
+        delete iterator->second->getNoop();
+        delete iterator->second;
+        _bundles.erase(iterator);
     }
 }
 
