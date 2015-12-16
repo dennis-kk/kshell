@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\kshell\internal\bundle_box.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\bundle_box_loader.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\bundle_context_impl.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\bundle_impl.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\bundle_loader.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\bundle_manager.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\bundle_reference_impl.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\condition.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\daemon_win32.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\framework_factory.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\framework_impl.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\misc.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\path.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\pid_file.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\resolver.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\scope_lock.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\service_reference_impl.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\internal\util.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lapi.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lzio.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lauxlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lbaselib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lbitlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lcode.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lcorolib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lctype.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\ldblib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\ldebug.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\ldo.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\ldump.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lfunc.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lgc.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\linit.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\liolib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\llex.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lmathlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lmem.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\loadlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lobject.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lopcodes.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\loslib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lparser.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lstate.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lstring.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lstrlib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\ltable.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\ltablib.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\ltm.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lundump.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kshell\lua\lvm.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\kshell\interface\auto_bundle.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\auto_service.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle_activator.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle_context.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle_event.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle_exception.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle_guid.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle_listener.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\bundle_reference.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\class_not_found_exception.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\framework.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\framework_event.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\framework_exception.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\interrupted_exception.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\kshell.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\pragma.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\service.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\service_event.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\service_exception.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\service_listener.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\service_reference.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\interface\service_wrapper.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_box.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_box_loader.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_config.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_context_impl.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_handle.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_impl.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_loader.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_manager.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\bundle_reference_impl.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\color.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\condition.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\framework_factory.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\framework_impl.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\ignore.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\misc.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\path.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\pid_file.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\resolver.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\scope_lock.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\service_reference_impl.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\util.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kshell\internal\version.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="interface">
+      <UniqueIdentifier>{f3e023a2-e9d2-445e-b950-4be32f3f7591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="internal">
+      <UniqueIdentifier>{a536ee24-6d60-4dd1-b65c-22fdb8663574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua">
+      <UniqueIdentifier>{429a6be3-1966-410e-945e-f3869ffa8e6f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\kshell\interface\service_wrapper_impl.inl">
+      <Filter>interface</Filter>
+    </None>
+  </ItemGroup>
+</Project>
